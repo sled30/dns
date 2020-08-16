@@ -1,0 +1,12 @@
+version: '3.6'
+services:
+  mydns:
+    image: jpillora/dnsmasq
+    ports:
+      - 53:53/udp
+      - 5380:8080
+    volumes:
+      - ./conf/dnsmasq.conf:/etc/dnsmasq.conf:rw
+    environment:
+      HTTP_USER: foo
+      HTTP_PASS: bar
